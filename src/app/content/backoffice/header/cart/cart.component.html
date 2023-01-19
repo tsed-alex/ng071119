@@ -1,0 +1,15 @@
+<div>
+  <ng-container *ngFor="let product of products$ | async; trackBy:trackProductsBy">
+    <app-cart-product [product]="product"
+                      (increment)="incrementProduct($event)"
+                      (decrement)="decrementProduct($event)"
+                      (remove)="removeProduct($event)"
+                      (changeCount)="changeCount($event)"
+    >
+    </app-cart-product>
+  </ng-container>
+  <div>
+    <p>Total</p>
+    <p>{{totalPrice$ | async | number: '1.0-0'}}</p>
+  </div>
+</div>

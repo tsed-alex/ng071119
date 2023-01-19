@@ -1,19 +1,11 @@
-import { Component } from '@angular/core';
-import { MatSidenav } from '@angular/material';
+import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  encapsulation: ViewEncapsulation.None,
 })
-export class AppComponent {
-  public titleText = 'ng071119';
-  public drawer: MatSidenav;
+export class AppComponent  {
 
-  public setSidenav(drawer: MatSidenav): void {
-    Promise.resolve().then(() => {
-      this.drawer = drawer;
-    });
-  }
 }
-

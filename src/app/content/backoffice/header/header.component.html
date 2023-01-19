@@ -1,0 +1,20 @@
+<mat-toolbar color="primary">
+  <button mat-button (click)="toggleSideNav()">
+    <mat-icon matListIcon>view_headline</mat-icon>
+  </button>
+  <h3 class="title">{{title}}</h3>
+  <app-exchange-rates [rates]="rates"></app-exchange-rates>
+
+  <div class="cart">
+    <mat-icon (click)="isOpen = true"
+              [matBadge]="totalCount$ | async" matBadgeColor="warn"
+    >shopping_cart
+    </mat-icon>
+    <app-cart [ngClass]="{closed:!isOpen}"></app-cart>
+  </div>
+
+
+  <button mat-button (click)="logout()">
+    <mat-icon matListIcon>logout</mat-icon>
+  </button>
+</mat-toolbar>
